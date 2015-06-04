@@ -1,0 +1,8 @@
+.logo img {
+    width:200px; /* you can use % */
+    height: auto;
+}
+
+input.ng-invalid.ng-touched {
+    background-color: red;
+}
