@@ -1,0 +1,39 @@
+    <div class="container fluid" ng-controller="artCollectionController as acc">
+        <span>Search Input: </span>
+        <input ng-model="acc.sortCriteria.name">
+        <span>{{ acc.sortCriteria.name }}</span>
+        <br />
+        <div ng-repeat="art in acc.artworks">
+            <span>{{ art.name }}</span>
+            <span>{{ art.artist }}</span>
+            <span>{{ art.description }}</span>
+            <div class="logo">
+                <img ng-src="{{ art.imageurl }}" class="img-thumbnail"></img>
+            </div>
+        </div>
+        </div>
+<br />
+       <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <div class="panel panel-default" ng-controller="formController as fc">
+                    <div class="panel-heading">
+                        Submit for quote:
+                    </div>
+                    <div class="panel-body">
+                        <form name="submitForm" novalidate>
+                            <div>First Name:<input required name="fname" ng-model-options="{ debounce: 3000 }" ng-model="fc.firstName"></div>
+                            <div>Last Name:<input required name="lname" ng-model="fc.lastName"></div>
+                            <div>Email:<input type="email" required name="email" ng-model="fc.email"></div>
+                            <div>Phone:<input required name="phone" ng-model="fc.phone"></div>
+                            <button class="btn btn-primary" ng-disabled="submitForm.$invalid">Submit</button>
+                        </form>
+                        <div ng-show="submitForm.fname.$error.required && submitForm.fname.$touched">First Name is Required</div>
+                        <div ng-show="submitForm.lname.$error.required && submitForm.lname.$touched">Last Name is Required</div>
+                        <div ng-show="submitForm.email.$error.required && submitForm.email.$touched">Email is Required</div>
+                        <div ng-show="submitForm.email.$error.email && submitForm.email.$touched">Email must be valid</div>
+                        <div ng-show="submitForm.phone.$error.required && submitForm.phone.$touched">Phone is Required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

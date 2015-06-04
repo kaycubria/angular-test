@@ -1,4 +1,4 @@
-angular.module('app.artCollectionModule', ['collectionDetailModule'])
+angular.module('artCollectionModule', [])
     .controller('artCollectionController', function($scope) {
       var acc = this;
       acc.sortCriteria;
