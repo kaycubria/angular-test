@@ -5,7 +5,7 @@ angular.module('artCollectionModule', [])
       acc.personObject = {};
       acc.personObject.name = 'Bob';
       acc.artworks = [
-           {
+      {
              "name": "Interior at Nice, 1920",
              "artist": "Henri Matisse",
              "description": "Room with woman on the balcony, 1920",
@@ -31,6 +31,36 @@ angular.module('artCollectionModule', [])
             console.log('input value changed');
         };
     })
+    // .constant('MYVALUE', 3)
+    // .value('someValue', 21)
+    // .factory('artListFactory', function(){
+    //   var internalVars;
+
+    //   return {
+    //     value: 49,
+    //     myManipulator: function() {
+    //       internalVars = 37;
+    //     },
+    //     showInternals: function() {
+    //       console.log(internalVars);
+    //     }
+    //   };
+    // })
+    // .service('artListService', function($http){
+    //   var als = this;
+
+    //   als.getArt = function()
+    // })
+    // .factory('artListFactory', function(){
+    //   return 49;
+    // })
+    // .service('artListService' function(){
+    //   var als = this;
+    //   als.value = 50;
+    // })
     .controller('formController', function($scope){
+      var fc = this;
+
+
       $scope.$watch($scope.submitForm, function(n, o) {console.log('watch called')}, true)
   });
