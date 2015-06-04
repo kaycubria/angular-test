@@ -5,8 +5,8 @@ angular.module('artCollectionModule', [])
       acc.personObject = {};
       acc.personObject.name = 'Bob';
       acc.sortCriteria = {};
-      artListService.getArt().then(function(response){
-            acc.artworks = response.data;
+      artListService.getArt().then(function(data){
+            acc.artworks = data;
         });
       acc.searchUpdated = function() {
             console.log('input value changed');
@@ -16,45 +16,31 @@ angular.module('artCollectionModule', [])
       $location.url('/productDetail/' + artwork);
     }
   })
-    .service('artListService', function($http){
+.service('artListService', function($http){
         var als = this;
 
         als.getArt = function(){
-            return $http.get('data/artworks.json');
+            var myPromise = $http.get('data/artworks.json').then(function(response){
+                return response.data;
+            });
+
+            return myPromise;
+
         };
 
-        // als.getSecondPieceOfData = function(){
-        //     return $http.get('data/')
-        // }
+        als.getArtworks = function(name){
+            return $http.get('data/artworks.json').then(function(response){
+                var returnArtwork;
+                angular.forEach(response.data, function(artwork){
+                    if(artwork.name === name){
+                        returnArtwork = artwork;
+                    }
+                });
+                return returnArtwork;
+            });
+        }
 
     })
-    // .constant('MYVALUE', 3)
-    // .value('someValue', 21)
-    // .factory('artListFactory', function(){
-    //   var internalVars;
-
-    //   return {
-    //     value: 49,
-    //     myManipulator: function() {
-    //       internalVars = 37;
-    //     },
-    //     showInternals: function() {
-    //       console.log(internalVars);
-    //     }
-    //   };
-    // })
-    // .service('artListService', function($http){
-    //   var als = this;
-
-    //   als.getArt = function()
-    // })
-    // .factory('artListFactory', function(){
-    //   return 49;
-    // })
-    // .service('artListService' function(){
-    //   var als = this;
-    //   als.value = 50;
-    // })
     .controller('formController', function($scope){
       var fc = this;
 
