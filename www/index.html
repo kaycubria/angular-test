@@ -5,16 +5,20 @@
 </head>
 <body>
     <div class="container fluid" ng-controller="artCollectionController as acc">
+        <span>Search Input: </span>
         <input ng-model="acc.sortCriteria.name">
         <span>{{ acc.sortCriteria.name }}</span>
+        <br />
         <div ng-repeat="art in acc.artworks">
             <span>{{ art.name }}</span>
             <span>{{ art.artist }}</span>
             <span>{{ art.description }}</span>
-                <img ng-src="{{ art.imageurl }}" class="img-responsive"></img>
+            <div class="logo">
+                <img ng-src="{{ art.imageurl }}" class="img-thumbnail"></img>
+            </div>
         </div>
         </div>
-
+<br />
         <div class="row">
             <div class="col-xs-6 col-xs-offset-3">
                 <div class="panel panel-default" ng-controller="formController as fc">

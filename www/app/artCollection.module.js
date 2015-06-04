@@ -20,6 +20,11 @@ angular.module('app.artCollectionModule', ['collectionDetailModule'])
              "artist": "Edward Hopper",
              "description": "Scene from outside a restaurant 1942",
              "imageurl": "http://www.artic.edu/aic/collections/citi/images/standard/WebLarge/WebImg_000254/187455_3026962.jpg"
+           },{
+             "name": "American Gothic",
+             "artist": "Grant Wood",
+             "description": "Couple pictured outside their farmhouse 1930",
+             "imageurl": "http://www.artic.edu/aic/collections/citi/images/standard/WebLarge/WebImg_000256/190741_3056034.jpg"
            }
        ];
        acc.searchUpdated = function() {
@@ -27,4 +32,5 @@ angular.module('app.artCollectionModule', ['collectionDetailModule'])
         };
     })
     .controller('formController', function($scope){
+      $scope.$watch($scope.submitForm, function(n, o) {console.log('watch called')}, true)
   });

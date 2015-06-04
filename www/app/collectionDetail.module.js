@@ -1,1 +1,1 @@
-angular.module('collectionDetailModule', []).config(function(){console.log("loaded!")});
+angular.module('collectionDetailModule', []).config(function(){console.log("rabdom extra module loaded!")});
