@@ -1,0 +1,1 @@
+angular.module('collectionDetailModule', []).config(function(){console.log("loaded!")});

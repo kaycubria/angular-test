@@ -1,10 +1,45 @@
-<html ng-app>
+<html ng-app="app.artCollectionModule">
 <head>
-  <title>Angular Test App</title>
-  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+    <title>Art Collection Angular Demo App</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-    {{"Hello " + "World!"}}
+    <div class="container fluid" ng-controller="artCollectionController as acc">
+        <input ng-model="acc.sortCriteria.name">
+        <span>{{ acc.sortCriteria.name }}</span>
+        <div ng-repeat="art in acc.artworks">
+            <span>{{ art.name }}</span>
+            <span>{{ art.artist }}</span>
+            <span>{{ art.description }}</span>
+                <img ng-src="{{ art.imageurl }}" class="img-responsive"></img>
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <div class="panel panel-default" ng-controller="formController as fc">
+                    <div class="panel-heading">
+                        Submit for quote:
+                    </div>
+                    <div class="panel-body">
+                        <form name="submitForm" novalidate>
+                            <div>First Name:<input required name="fname" ng-model-options="{ debounce: 3000 }" ng-model="fc.firstName"></div>
+                            <div>Last Name:<input required name="lname" ng-model="fc.lastName"></div>
+                            <div>Email:<input type="email" required name="email" ng-model="fc.email"></div>
+                            <div>Phone:<input required name="phone" ng-model="fc.phone"></div>
+                            <button class="btn btn-primary" ng-disabled="submitForm.$invalid">Submit</button>
+                        </form>
+                        <div ng-show="submitForm.fname.$error.required && submitForm.fname.$touched">First Name is Required</div>
+                        <div ng-show="submitForm.lname.$error.required && submitForm.lname.$touched">Last Name is Required</div>
+                        <div ng-show="submitForm.email.$error.required && submitForm.email.$touched">Email is Required</div>
+                        <div ng-show="submitForm.email.$error.email && submitForm.email.$touched">Email must be valid</div>
+                        <div ng-show="submitForm.phone.$error.required && submitForm.phone.$touched">Phone is Required</div>
+                    </div>
+                </div>
+            </div>
+
     <script src="lib/angular/angular.js"></script>
+    <script src="app/artCollection.module.js"></script>
+    <script src="app/collectionDetail.module.js"></script>
 </body>
 </html>
