@@ -3,14 +3,16 @@
         <span>Search Input: </span>
         <input ng-model="acc.sortCriteria.name">
         <span>{{ acc.sortCriteria.name }}</span>
-        <br />
+        <br>
+        <br>
         <div ng-repeat="art in acc.artworks">
-            <span>{{ art.name }}</span>
-            <span>{{ art.artist }}</span>
-            <span>{{ art.description }}</span>
             <div class="logo">
                 <img ng-src="{{ art.imageurl }}" class="img-thumbnail"></img>
             </div>
+            <span>{{ art.name }}</span><br>
+            <span>{{ art.artist }}</span><br>
+            <span>{{ art.description }}</span><br>
+            <br>
         </div>
         </div>
 <br />

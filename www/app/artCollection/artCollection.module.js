@@ -11,7 +11,7 @@ angular.module('artCollectionModule', [])
       acc.searchUpdated = function() {
             console.log('input value changed');
           };
-      acc.goToDetails = function(artwork){
+      acc.goToDetails = function(artworks){
       console.log('clicked');
       $location.url('/productDetail/' + artwork);
     }
