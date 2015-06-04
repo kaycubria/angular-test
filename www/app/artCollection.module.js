@@ -2,10 +2,12 @@ angular.module('app.artCollectionModule', ['collectionDetailModule'])
     .controller('artCollectionController', function($scope) {
       var acc = this;
       acc.sortCriteria;
+      acc.personObject = {};
+      acc.personObject.name = 'Bob';
       acc.artworks = [
            {
              "name": "Interior at Nice, 1920",
-             "artist": "Henri Matise",
+             "artist": "Henri Matisse",
              "description": "Room with woman on the balcony, 1920",
              "imageurl": "http://www.artic.edu/aic/collections/citi/images/standard/WebLarge/WebImg_000260/196885_3116086.jpg"
            },{
