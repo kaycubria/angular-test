@@ -5,8 +5,8 @@ angular.module('artCollectionModule', [])
       acc.artworks = artList;
 
       acc.sortCriteria;
-      acc.personObject = {};
-      acc.personObject.name = 'Bob';
+      // acc.personObject = {};
+      // acc.personObject.name = 'Bob';
 
         // acc.cancelReservation = function(){
         //     console.log('call the cancel');
@@ -55,17 +55,17 @@ angular.module('artCollectionModule', [])
             });
         };
 
-        als.getArt = function(name){
-            return $http.get('data/artworks.json').then(function(response){
-                var returnArt;
-                angular.forEach(response.data, function(art){
-                    if(art.name === name){
-                        returnArt = art;
-                    }
-                });
-                return returnArt;
-            });
-        };
+        // als.getArt = function(name){
+        //     return $http.get('data/artworks.json').then(function(response){
+        //         var returnArt;
+        //         angular.forEach(response.data, function(art){
+        //             if(art.name === name){
+        //                 returnArt = art;
+        //             }
+        //         });
+        //         return returnArt;
+        //     });
+        // };
 
         // als.cancel = function() {
         //     myDeferredObject.reject('User cancelled');

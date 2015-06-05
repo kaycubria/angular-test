@@ -8,10 +8,6 @@ angular.module('artDetailsModule', [])
             acc.message = data;
         });
 
-        acc.goToDetails = function(artName){
-            console.log('clicked');
-            $location.url('/artDetail/' + artName);
-        };
 
   })
 .service('artListService', function($http, $q, $rootScope, $timeout){
@@ -34,22 +30,6 @@ angular.module('artDetailsModule', [])
                 console.log('finished all of the promise')
             });
         };
-
-        als.getArt = function(name){
-            return $http.get('data/artworks.json').then(function(response){
-                var returnArt;
-                angular.forEach(response.data, function(art){
-                    if(art.name === name){
-                        returnArt = art;
-                    }
-                });
-                return returnArt;
-            });
-        };
-
-        // als.cancel = function() {
-        //     myDeferredObject.reject('User cancelled');
-        // };
 
         als.getThePromise = function(){
             return myPromise;
