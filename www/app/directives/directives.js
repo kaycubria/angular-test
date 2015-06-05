@@ -7,9 +7,6 @@ angular.module( 'directives', [] )
 }).directive( 'abcArtDetails', function(){
   return {
     restrict: 'AE',
-    templateUrl: 'app/directives/artDetails.directive.html',
-    scope: {
-      click: "&"
+    templateUrl: 'app/directives/artDetails.directive.html'
     }
-  }
 });
