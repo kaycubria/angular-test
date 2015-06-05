@@ -4,9 +4,12 @@ angular.module( 'directives', [] )
     restrict: 'EA',
     templateUrl: 'app/directives/banner.directive.html'
   }
-}).directive( 'abcArtDetail', function(){
+}).directive( 'abcArtDetails', function(){
   return {
     restrict: 'AE',
-    templateUrl: 'app/directives/artDetail.directive.html'
+    templateUrl: 'app/directives/artDetails.directive.html',
+    scope: {
+      click: "&"
+    }
   }
 });
