@@ -9,4 +9,6 @@ angular.module( 'directives', [] )
     restrict: 'AE',
     templateUrl: 'app/directives/artDetails.directive.html'
     }
+}).directive( 'abcLink',
+  function(scope, element, attributes) {
 });

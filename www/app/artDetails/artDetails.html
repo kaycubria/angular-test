@@ -1,8 +1,3 @@
-
-  <div class="logo">
-      <a href='#/artDetails/{{ art.id }}'><img ng-src="{{ art.imageurl }}" class="img-thumbnail"></img></a>
-  </div>
-  <span>{{ art.name }}</span><br>
-  <span>{{ art.artist }}</span><br>
-  <span>{{ art.description }}</span><br>
-  <br>
+        <div ng-repeat="art in acc.artworks">
+            <div abc-art-details></div>
+        </div>
