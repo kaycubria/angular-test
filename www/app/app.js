@@ -1,4 +1,4 @@
-angular.module('app', ['ngRoute', 'artCollectionModule', 'artDetailsModule']).config(function($routeProvider){
+angular.module('app', ['ngRoute', 'artCollectionModule', 'artDetailsModule', 'directives']).config(function($routeProvider){
     $routeProvider.when('/artCollection', {
         templateUrl: '/app/artCollection/artCollection.html',
         controller: 'artCollectionController',

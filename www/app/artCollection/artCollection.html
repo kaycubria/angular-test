@@ -9,18 +9,13 @@
         <br>
         <br>
         <div ng-repeat="art in acc.artworks">
-            <div class="logo">
-                <a href='artDetails/{{ art.id }}'><img ng-src="{{ art.imageurl }}" class="img-thumbnail"></img></a>
-            </div>
-            <span>{{ art.name }}</span><br>
-            <span>{{ art.artist }}</span><br>
-            <span>{{ art.description }}</span><br>
-            <br>
+            <div abc-art-detail></div>
         </div>
         </div>
 <br />
        <div class="row">
             <div class="col-xs-6 col-xs-offset-3">
+                <div abc-banner></div>
                 <div class="panel panel-default" ng-controller="formController as fc">
                     <div class="panel-heading">
                         Submit for quote:
