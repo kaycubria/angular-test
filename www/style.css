@@ -3,6 +3,11 @@
     height: auto;
 }
 
+.sitetitle{
+  font-size: 5em;
+  font-family: sans-serif;
+  text-align: center
+}
 input.ng-invalid.ng-touched {
     background-color: red;
 }

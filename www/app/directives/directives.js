@@ -10,5 +10,23 @@ angular.module( 'directives', [] )
     templateUrl: 'app/directives/artDetails.directive.html'
     }
 }).directive( 'abcLink',
-  function(scope, element, attributes) {
+  function() {
+    return {
+      restrict: 'A',
+      link: function(scope, element, attributes) {
+        console.info(scope, element, attributes);
+        element.addClass( attributes.abcLink);
+      }
+    }
+// })
+// .directive('abcDupe', function() {
+//   function linkingFunction(scope, element, attributes) {
+//       var newElement = element.clone();
+//       for( var i = 0)
+//       element.after( newElement )
+//   }
+//   return {
+//     restrict: 'A',
+//     link: linkingFunction
+//   }
 });

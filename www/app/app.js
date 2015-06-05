@@ -10,14 +10,12 @@ angular.module('app', ['ngRoute', 'artCollectionModule', 'artDetailsModule', 'di
         }
     }).when('/artDetails/:name', {
         templateUrl: '/app/artDetails/artDetails.html',
-        controller: 'artCollectionController',
+        controller: 'artDetailsController',
         controllerAs: 'acc',
         resolve: {
             artList: function(artListService){
                 return artListService.getArtworks();
             }
         }
-        // controller: 'artDetailsController',
-        // controllerAs: 'adc'
     }).otherwise('/artCollection');
 })

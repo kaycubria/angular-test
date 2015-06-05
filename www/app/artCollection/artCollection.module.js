@@ -8,25 +8,25 @@ angular.module('artCollectionModule', [])
       acc.personObject = {};
       acc.personObject.name = 'Bob';
 
-        acc.cancelReservation = function(){
-            console.log('call the cancel');
-            artListService.cancel();
-        };
+        // acc.cancelReservation = function(){
+        //     console.log('call the cancel');
+        //     artListService.cancel();
+        // };
 
-        acc.clickFinishedButton = function(){
-            artListService.userUpdate();
-        };
+        // acc.clickFinishedButton = function(){
+        //     artListService.userUpdate();
+        // };
 
         artListService.getCombinedPromise().then(function(data){
             acc.message = data;
         });
 
-        acc.searchUpdated = function() {
-            console.log('input value changed');
-        };
-        acc.goToDetails = function(bedName){
+        // acc.searchUpdated = function() {
+        //     console.log('input value changed');
+        // };
+        acc.goToDetails = function(artName){
             console.log('clicked');
-            $location.url('/artDetail/' + bedName);
+            $location.url('/artDetail/' + artName);
         };
 
   })
@@ -45,9 +45,9 @@ angular.module('artCollectionModule', [])
 
         };
 
-        als.userUpdate = function() {
-            myDeferredObject.resolve('User is finished');
-        };
+        // als.userUpdate = function() {
+        //     myDeferredObject.resolve('User is finished');
+        // };
 
         als.getCombinedPromise = function(){
             return $q.all([myPromise, myHttpPromise]).then(function(resolutionArray){
@@ -67,30 +67,17 @@ angular.module('artCollectionModule', [])
             });
         };
 
-        als.cancel = function() {
-            myDeferredObject.reject('User cancelled');
-        };
+        // als.cancel = function() {
+        //     myDeferredObject.reject('User cancelled');
+        // };
 
         als.getThePromise = function(){
             return myPromise;
         };
 
-        als.performLongCalculation = function(){
 
-            $timeout(function(){
-                myDeferredObject.resolve('Table is Ready');
-            }, 3000);
-
-            $timeout(function(){
-                myDeferredObject.notify('Almost Done');
-            }, 1500);
-
-            return myPromise;
-        }
     })
     .controller('formController', function($scope){
       var fc = this;
 
-
-      $scope.$watch($scope.submitForm, function(n, o) {console.log('watch called')}, true)
   });
