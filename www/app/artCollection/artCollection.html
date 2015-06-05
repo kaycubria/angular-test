@@ -10,7 +10,7 @@
 <!--         <span>{{ acc.sortCriteria.name }}</span> -->
         <br>
         <br>
-        <div ng-repeat="art in acc.artworks">
+        <div ng-repeat="art in acc.artworks | filter:acc.sortCriteria.name">
             <div abc-art-details></div>
         </div>
         </div>
